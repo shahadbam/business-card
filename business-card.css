@@ -1,0 +1,120 @@
+body {
+    background-color: #dda15e;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.card-container {
+    perspective: 500px; /* Set perspective for the 3D effect */
+}
+
+.caption {
+    color: #2b2839;
+    width: 128px;
+    text-align: left;
+    font-weight: bold;
+    padding: 3px 8px;
+    margin-left: 28px;
+    margin-bottom: 11px;
+    background-color: #dda15e;
+    border-radius: 9px;
+    box-shadow: 9px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    width: 350px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d; /* Allow 3D transformations */
+    transition: transform 0.6s ease; /* Smooth transition for the flip */
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side when flipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 9px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background: #fefae0;
+    color: #2b2839;
+}
+
+.card-front::after {
+    content: 'Flip Me';
+    position: absolute;
+    right: -46px;
+    top: 35px;
+    transform: rotate(90deg);
+    color: #fefae0;
+    background-color: #2b2839;
+    padding: 2px 10px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.card-back {
+    background: #2b2839;
+    color: #fefae0;
+    transform: rotateY(180deg); /* Initially hide the back side */
+}
+
+.card-back::after {
+    content: 'Flip Me';
+    position: absolute;
+    right: -46px;
+    top: 35px;
+    transform: rotate(90deg);
+    color: #2b2839;
+    background-color: #fefae0;
+    padding: 2px 10px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+/* Additional Styling for Back Content */
+.card-back h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.card-back a {
+    color: #dda15e;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/*
+Stretch goals:
+Find other ways you can personalize 
+the design of your business card, e.g.:
+- change the border(s)
+- add border radius
+- shuffle the layout
+- shadows        🤯
+- hover effects  🤯🤯
+- animations     🤯🤯🤯
+*/
+
+/*
+Final challenge:
+Download the code to your local computer and place it
+in a folder called "business-card"
+*/
